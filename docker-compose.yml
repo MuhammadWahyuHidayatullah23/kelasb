@@ -2,14 +2,14 @@ version: '3'
 
 services:
     app:
-      restart: always
-      container_name: wahyu
-      environment:
+    restart: always
+    container_name: wahyu
+    environment:
         - TZ=Asia/Makassar
-      build:
-          context: .
-      ports:
-          - "8001:8001"
-      volumes:
-          - . :/app
-      command: gunicorn mysite.wsgi:application --bind 0.0.0.0:8001 --workers 2
+    build:
+        context: -
+    ports:
+        - "8001:8001"
+    volumes:
+        - .:/app
+    command: gunicorn mysite.wsgi:application --bind 0.0.0.0:8001 --workers 4
