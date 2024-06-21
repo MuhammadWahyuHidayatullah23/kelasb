@@ -25,7 +25,8 @@ class Artikel(models.Model):
         external_plugin_resources=[
             [
                 'youtube', 
-                'https://minio.umkt.ac.id/simpelv2-static/ckeditor_plugins/youtube/youtube/',
+                # 'https://minio.umkt.ac.id/simpelv2-static/ckeditor_plugins/youtube/youtube/',
+                'http://wahyu.my-kelompok2.my.id//static/ckeditor_plugins/youtube/youtube/',
                 'plugin.js'
             ]
         ],
