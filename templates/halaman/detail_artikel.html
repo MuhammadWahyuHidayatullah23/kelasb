@@ -15,13 +15,14 @@
                         <img src="{% static 'halaman/assets/img/image-placeholder.jpg' %}" alt="" />
                     {% endif %} -->
                     {% if artikel.thumbnail %}
-                    <img src="width: 100%" src="{{ artikel.thumbnail.url }}" alt="" />
+                    <img style="width: 100%;"src="{{ artikel.thumbnail.url }}" alt=""/>
                     {% else %}
-                    <img src="{% static 'halaman/assets/img/image-placeholder.jpg' %}" alt="" />
+                    <img src="{% static 'halaman/assets/img/image_placeholder.jpg' %}" alt=""/>
                     {% endif %}
                     <h3 class="title">{{ artikel.judul }}</h3>
+                    <div>
                     <p>{{ artikel.isi | safe }}</p>
-
+                    </div>
                     <blockquote>
                     {% comment %} <p>
                             “And thank you for turning my personal jean jacket into a couture piece.”
