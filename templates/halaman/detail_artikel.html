@@ -9,15 +9,10 @@
         <div class="section section-text">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <!-- {% if artikel.thumbnail %}
+                    {% if artikel.thumbnail %}
                     <img style="width: 100%" src="{{ artikel.thumbnail.url }}" alt="" />
                     {% else %}
-                        <img src="{% static 'halaman/assets/img/image-placeholder.jpg' %}" alt="" />
-                    {% endif %} -->
-                    {% if artikel.thumbnail %}
-                    <img style="width: 100%;"src="{{ artikel.thumbnail.url }}" alt=""/>
-                    {% else %}
-                    <img src="{% static 'halaman/assets/img/image_placeholder.jpg' %}" alt=""/>
+                    <img src="{% static 'halaman/assets/img/image-placeholder.jpg' %}" alt="" />
                     {% endif %}
                     <h3 class="title">{{ artikel.judul }}</h3>
                     <div>
