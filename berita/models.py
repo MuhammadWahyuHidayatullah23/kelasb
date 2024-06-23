@@ -26,7 +26,7 @@ class Artikel(models.Model):
             [
                 'youtube', 
                 # 'https://minio.umkt.ac.id/simpelv2-static/ckeditor_plugins/youtube/youtube/',
-                'http://wahyu.my-kelompok2.my.id//static/ckeditor_plugins/youtube/youtube/',
+                'https://wahyu.my-kelompok2.my.id//static/ckeditor_plugins/youtube/youtube/',
                 'plugin.js'
             ]
         ],
