@@ -27,7 +27,7 @@
                     <li{% if menu_aktif == kategori.nama %}
                     class="active"
                     {% endif %}>
-                        <a href="/?kategori={{ kategori.nama }}">{{ kategori }}</a>
+                        <a href="/?kategori={{ kategori.nama }}">{{ kategori.nama }}</a>
                     </li>
                     {% endfor %}
                     </ul>
@@ -39,20 +39,22 @@
                 <div class="col-md-4">
                     <div class="card card-plain card-blog">
                         <div class="card-image">
+                            <a href="{% url 'detail_artikel' artikel.slug %}">
                             {% if artikel.thumbnail %}
                             <img class="img img-raised" src="{{ artikel.thumbnail.url }}" />
                             {% else %}
                                 <img src="{% static 'halaman/assets/img/image-placeholder.jpg' %}" alt="" />
                             {% endif %}
+                            </a>
                         </div>
                         <div class="card-content">
-                            <h6 class="category text-info">{{ artikel.kategori }}</h6>
+                            <h6 class="category text-info">{{ artikel.kategori.nama }}</h6>
                             <h4 class="card-title">
                                 <a href="{% url 'detail_artikel' artikel.slug %}">{{ artikel.judul }}</a></h4>
                             <p class="card-description">
-                                {{ artikel.isi|truncatechars:"200"|safe }}<a href="{% url 'detail_artikel' artikel.slug %}"> Selengkapnya </a>
+                                {{ artikel.isi|truncatechars:'200'|safe }}<a href="{% url 'detail_artikel' artikel.slug %}"> Selengkapnya </a>
                             </p>
-                            <span class="label label-info">{{ artikel.created_at }}</span>
+                            <span class="label label-info">{{ artikel.created_at|date:"d M Y" }}</span>
                         </div>
                     </div>
                 </div>
@@ -65,8 +67,9 @@
         </div>
     </div>
 </div>
+</div>
 {% endblock %}
 
 {% block js %}
 
-{% endblock %}
+{% endblock js %}
